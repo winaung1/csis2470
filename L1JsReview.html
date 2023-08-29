@@ -11,17 +11,47 @@
 <title>JavaScript Basics</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<button onclick="callAlerts()">See Results</button>
 <script>
-alert('Hello world')
-alert(5 + 4)
-alert(5 - 2)
-alert(8 * 2)
-alert(8 / 4)
+function callAlerts(){
+    alert('Hello world')
+    alert(5 + 4)
+    alert(5 - 2)
+    alert(8 * 2)
+    alert(8 / 4)
+    
+    callForLoop()
+    person.getFullInfo()
+}
 </script>
 </head>
 <body>
 <div>
 <h2>Hello World</h2>
+<input style="width: 90%;" type="text" placeholder="search by first name, last name, age or full Info. Ex(firstName == 'win')">
+<button onclick="returnText()" class="search">search</button>
+<script>
+function returnText(){
+    let input = document.querySelector("input").value;
+    switch(input.replace(/\s/g, '').toLowerCase()){
+        case 'firstname':
+            document.write(person.firstName)
+            break;
+        case 'age':
+            document.write(person.age)
+            break;
+        case 'lastname':
+            document.write(person.lastName)
+            break;
+        case 'fullinfo':
+            document.write(person.getFullInfo())
+            break;
+        default:
+            alert('invalid input')
+    }
+}
+
+</script>
 <script>
 const sports = []
 sports[0] = 'soccer'
@@ -35,17 +65,19 @@ person.lastName = 'Aung'
 person.age = 26
 
 person.getFullInfo = function(){
-    document.write(`Hi I am ${person.firstName} ${person.lastName} and I am ${person.age} `)
+    document.write(`Hi I am ${person.firstName} ${person.lastName} and I am ${person.age}`)
 }
 
-person.getFullInfo()
+
 
 </script>
 <p>This is just a page to show an example of JS.</p>
 <ol>
 <script>
-for(let i = 0; i < sports.length; i++){
-    document.write(sports[i])
+function callForLoop(){
+    for(let i = 0; i < sports.length; i++){
+        document.write(`<p>${sports[i]}</p>`)
+    }
 }
 </script>
 </ol></div>
