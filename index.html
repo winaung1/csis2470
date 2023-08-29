@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>JavaScript Basics</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<h2>Hello World</h2>
+<p>This is just a page to show an example of JS.</p>
+<h1>My Hobbies</h1>
+<div></div>
+<script>
+let myHobbies = [
+    'soccer',
+    'swimming',
+    'reading',
+    'coding'
+]
+
+let hobby = ''
+for (let i = 0; i < myHobbies.length; i++){
+    hobby += myHobbies[i] + '<br>';
+}
+document.querySelector('div').innerHTML = hobby
+</script>
+</body>
+</html>
